@@ -6,7 +6,7 @@ RUN apt update -y
 RUN apt upgrade -y
 RUN apt install git -y
 RUN apt install nano -y
-RUN git clone https://github.com/wzwolf/reactjs-nodejs.git
+RUN git clone https://github.com/wzwolf/emailtemplatenodejs.git
 
 EXPOSE 3000
 EXPOSE 3001
