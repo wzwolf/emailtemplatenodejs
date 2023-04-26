@@ -1,0 +1,12 @@
+{
+  "name": "emailtemplatenodejs",
+  "version": "1.0.0",
+  "description": "a sample nodejs app to generate a quick template for sending email resumes to companies",
+  "main": "main.js",
+  "scripts": {
+    "start":"nodemon main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

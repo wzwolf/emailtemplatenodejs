@@ -1,3 +1,6 @@
+# resource folder
+resources/
+
 # Logs
 logs
 *.log
