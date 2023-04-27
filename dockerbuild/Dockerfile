@@ -19,7 +19,8 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends \
         libssl-dev \
         wget \
 	nano \
-	npm 
+	npm \
+	htop
 
 RUN apt update -y -q 
 
