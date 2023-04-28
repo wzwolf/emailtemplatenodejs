@@ -20,7 +20,9 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends \
         wget \
 	nano \
 	npm \
-	htop
+	htop \
+	less \
+	procps
 
 RUN apt update -y -q 
 
