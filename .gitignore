@@ -1,3 +1,6 @@
+# ignore swp files
+*.swp
+
 # resource folder
 resources/
 

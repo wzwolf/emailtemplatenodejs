@@ -19,36 +19,32 @@ function main(text_to_replace_file,maintext_file) {
 	// convert filepath to full file paths
 	const text_to_replace_full_path = path.join(__dirname,text_to_replace_file);
 	const maintext_full_path = path.join(__dirname,maintext_file);
-	// create list of text to replace.
-	const text_to_replace = [];
-	// for each item in text_to_replace file
-	/*fs.readFile(text_to_replace_full_path,fileformat,(err,data)=>{
-		if(err){
-			console.error('error',err);
-			return;
-		}
-		// convert raw string into object with search term and text to replace
-		console.log(data);
-		let filelines = data.split(/\r?\n/);
-		console.log(filelines);
-		filelines.forEach(function(line){
-			try{
-				let searcharray = line.split(/:/);
-				console.log(searcharray);
-				text_to_replace.push(searcharray);
-			} catch (err){}
-		});
-		console.log(text_to_replace);
-	})
-	console.log(text_to_replace,"testing");
-	*/
+	// get data from text to replace file
 	try{
-		const data = fs.readFileSync(text_to_replace_full_path,fileformat);
-		console.log(data);
+		var data = fs.readFileSync(text_to_replace_full_path,fileformat).split(/\r?\n/);
+		console.log("data : "+data);
 	} catch(err) {
 		console.log(err);
 	}
+	console.log("data : "+data);
+	// convert data to array of search-replace-object
+	console.log("testing :" + new searchreplacepair("haha","hoho"));
+	const text_to_replace = [];
+	console.log(typeof data);
+	
+	console.log('end of script');
+}
 
+/**
+ * creates an object with
+ * searchkey and  replacements as attributes
+ * @param {string} searchkey
+ * @param {string} replacement
+ * create new obj with new searchreplacepair({searchkey},{replacement})
+*/
+function searchreplacepair(searchkey,replacement) {
+	this.searchkey = searchkey;
+	this.replacement = replacement;
 }
 
 console.log(main(text_to_replace_filepath,maintext_filepath))
