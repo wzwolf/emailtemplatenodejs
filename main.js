@@ -25,7 +25,7 @@ function main(text_to_replace_file,maintext_file) {
 	// convert data to array of search-replace-object
 	console.log("testing :" + new searchreplacepair("haha","hoho"));
 	const text_to_replace = [];
-	console.log(typeof data);
+	//console.log(typeof data);
 	var lines =data.split(/\r?\n/);
 	lines.forEach((line) => {
 		if(/:/.test(line)){
