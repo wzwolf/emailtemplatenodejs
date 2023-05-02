@@ -22,8 +22,13 @@ function main(text_to_replace_file,maintext_file) {
 	// get data from text to replace file
 	const data = extractdatafromfile(text_to_replace_full_path,fileformat);
 	console.log("data : "+data);
+	// check if data is valid. if not return error
+	if(typeof data === undefined){
+		//console.error("error");
+		throw new Error("[error], text_to_replace_file cannot be found");
+	}
 	// convert data to array of search-replace-object
-	console.log("testing :" + new searchreplacepair("haha","hoho"));
+	// console.log("testing :" + new searchreplacepair("haha","hoho"));
 	const text_to_replace = [];
 	//console.log(typeof data);
 	var lines =data.split(/\r?\n/);
