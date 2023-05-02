@@ -1,0 +1,3 @@
+[test] : test 1 replaced
+[test2] : test 2 replaced
+[test3] : test 3 replaced

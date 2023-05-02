@@ -85,5 +85,12 @@ function extractdatafromfile(file_full_path,fileformat) {
 	return output;
 }
 
+//module export for testing
+module.exports = main
+
 // main script run
-console.log(main(text_to_replace_filepath,maintext_filepath));
+/*
+if (!module.parent){
+	console.log(main(text_to_replace_filepath,maintext_filepath));
+}
+*/

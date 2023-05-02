@@ -4,9 +4,17 @@
   "description": "a sample nodejs app to generate a quick template for sending email resumes to companies",
   "main": "main.js",
   "scripts": {
-    "start":"nodemon main.js"
+    "start": "nodemon main.js",
+    "test" : "jest"
+  },
+  "jest": {
+    "collectCoverage":true
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.5.0",
+    "save-dev": "^0.0.1-security"
+  }
 }
