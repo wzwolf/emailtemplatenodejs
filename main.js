@@ -1,3 +1,4 @@
+// main/index file to run scripts
 const fs = require('fs');
 const path = require('path');
 
