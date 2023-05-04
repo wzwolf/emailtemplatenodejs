@@ -33,7 +33,8 @@ RUN apt update -y -q
 # RUN apt install curl wget -y
 # download and install nvm
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-
+RUN nvm install v18.16.0
+RUN npm install nodemon jest
 
 # download source file
 RUN cd /home \
