@@ -1,10 +1,6 @@
 // import module to test
 const main = require("../main");
 
-//console.log(main("../resources/text_to_replace.txt","../resources/maintext.txt")
-//console.log(typeof main);
-//console.log(main("test/searchreplace_1.txt","test/maintext_1.txt"));
-
 describe("main tests", () => {
 	// test 1 - standard working test
 	test("test1",() => {

@@ -1,3 +1,4 @@
+
 // this is a object oriented version of the same code
 const fs  = require('fs');
 const path = require('path');
@@ -86,13 +87,18 @@ function searchreplacepair(key,replace) {
 function main(replacefile,maintextfile,fileformat){
 	console.log('start of script');
 	// get string from replacefile
-	const data = filedata(replacefile,fileformat).data
+	const data = filedata(replacefile,fileformat).data;
 	// throw error if file not found
 	if(!data) {
-		throw new Error('[Error], text_to_replace_file cannot be found')
+		throw new Error('[Error], text_to_replace_file cannot be found');
 	}
 	// convert data from replacefile into array of key/replace obj
-	
+	const arraykeyrep = replacedata(data).convertarray;
+	// get string from maintext 
+	const maintext = filedata(maintextfile,fileformat).data.trim;
+	// replace string with  key replace pairs
+	const output = replaceText(maintext, arraykeyrep);
+	return output;
 }
 
 module.exports = {
