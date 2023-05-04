@@ -4,7 +4,7 @@ FROM debian:latest
 MAINTAINER wzwolfx wzwolfx@gmail.com
 
 # Replace shell with bash so we can source files
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+SHELL ["/bin/bash","--login","-c"]
 
 # Set debconf to run non-interactively
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
@@ -34,9 +34,8 @@ RUN apt update -y -q
 # download and install nvm
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
+
 # download source file
 RUN cd /home \
     && git clone https://github.com/wzwolf/emailtemplatenodejs.git
 
-EXPOSE 3000
-EXPOSE 3001
