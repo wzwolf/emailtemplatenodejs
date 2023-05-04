@@ -57,7 +57,21 @@ replacedata.prototype.convertarray = function() {
 	return output
 }
 
-
+/**
+ * replace text in main text for each searchreplace pair in array
+ * @param {string} main text
+ * @param {array} of searchreplacepair obj
+ * @return {string} modified main text
+*/
+function replaceText(mainText,textToReplace) {
+	let result = mainText;
+	textToReplace.forEach((pair) => {
+		const searchKey = new RegExp(pair.searchKey, 'ig');
+		console.log(searchKey);
+		const replacement = pair.replacement;
+      		result = result.replace(searchKey, replacement);
+	});
+}
 
 /**
  * creates a search replacement pair object
@@ -69,6 +83,19 @@ function searchreplacepair(key,replace) {
 	this.replacement = replace;
 }
 
+function main(replacefile,maintextfile,fileformat){
+	console.log('start of script');
+	// get string from replacefile
+	const data = filedata(replacefile,fileformat).data
+	// throw error if file not found
+	if(!data) {
+		throw new Error('[Error], text_to_replace_file cannot be found')
+	}
+	// convert data from replacefile into array of key/replace obj
+	
+}
+
 module.exports = {
 	filedata
+	Main
 	};
