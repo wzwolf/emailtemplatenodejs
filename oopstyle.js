@@ -32,6 +32,43 @@ filedata.prototype.data= function() {
 	}
 }
 
+/**
+ * @param {string} data
+*/
+function replacedata(data) {
+	this.data
+}
+
+// return an array of searchreplacepair from string data 
+replacedata.prototype.convertarray = function() {
+	output  = [];
+	// convert data to array of search-replace-object
+	var lines = this.data.split(/\r?\n/);
+	lines.forEach((line)=> {
+		if(!/:/.test(line)){return}
+		let searcharray = line.split(/:/);
+		// trim whitespace, replace all [ with \[, replace all ] with /]
+		// eg. " [text] " to "\[text\]"
+		let key = searcharray[0].trim().replace(/\[(.*?)\]/g,"\\[$1\\]");
+		let replace = searcharray[1].trim();
+		let pair = new searchreplacepair(key,replace);
+		ouput.push(pair);
+	});
+	return output
+}
+
+
+
+/**
+ * creates a search replacement pair object
+ * contains @param {string} key
+ * contains @param {string} replace
+*/
+function searchreplacepair(key,replace) {
+	this.searchkey = key;
+	this.replacement = replace;
+}
+
 module.exports = {
 	filedata
 	};

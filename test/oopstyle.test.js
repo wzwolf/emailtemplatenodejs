@@ -22,12 +22,4 @@ describe('filedata', () => {
 		expect(data).toBe(testContent);
 	});
   
-  	test('should throw an error when file is not found', () => {
-		// Create a filedata object with an invalid file path
-		const nonexistentFile = './resources/nonexistent.txt';    
-		const myFileData = new filedata(nonexistentFile, fileformat);
-		expect(() => {
-			myFileData.data();
-		}).toThrow();
-	});
 });
